@@ -28,12 +28,12 @@ import sl
 
 avl_tree = avl.AVLTree()
 rb_tree = rbt.RedBlackTree()
-sl = sl.SkipList(5, 0.5)
+sl_e = sl.SkipList(5, 0.5)
 
 for i in range(0, 5000):
     avl_tree.insert(arr[i])
     rb_tree.insert(arr[i])
-    sl.insert(arr[i], arr[i])
+    sl_e.insert(arr[i], arr[i])
 
 # Create another array containing 1,000 random integers in the range
 # [0…100,000]. This array may contain duplicates.
@@ -44,14 +44,16 @@ arr = [0] * 1000
 for i in range(0, 1000):
     arr[i] = random.randint(0, 100000)
 
-# Insert all the elements from this second array into the AVL tree. When
+# Insert all the elements from this second array into the trees. When
 # inserting, keep track of statistics
 avl_2 = avl.AVLTree()
 rbt_2 = rbt.RedBlackTree()
+sl_2 = sl.SkipList(5, 0.5)
 
 for i in arr:
     avl_2.insert(i)
     rbt_2.insert(i)
+    sl_2.insert(i, i)
 
 # Print the statistics
-rbt_2.printStatistics()
+sl_2.print_statistics()
