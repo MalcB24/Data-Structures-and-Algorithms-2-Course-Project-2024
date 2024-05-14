@@ -37,23 +37,25 @@ for i in range(0, 5000):
 
 # Create another array containing 1,000 random integers in the range
 # [0…100,000]. This array may contain duplicates.
-
 arr = [0] * 1000
-
 
 for i in range(0, 1000):
     arr[i] = random.randint(0, 100000)
 
 # Insert all the elements from this second array into the trees. When
 # inserting, keep track of statistics
-avl_2 = avl.AVLTree()
-rbt_2 = rbt.RedBlackTree()
-sl_2 = sl.SkipList(5, 0.5)
+
+# reset the stats to start fresh
+avl_tree.reset_stats()
+rb_tree.reset_stats()
+sl_e.reset_stats()
 
 for i in arr:
-    avl_2.insert(i)
-    rbt_2.insert(i)
-    sl_2.insert(i, i)
+    avl_tree.insert(i)
+    rb_tree.insert(i)
+    sl_e.insert(i, i)
 
 # Print the statistics
-sl_2.print_statistics()
+avl_tree.printStatistics()
+rb_tree.printStatistics()
+sl_e.printStatistics()

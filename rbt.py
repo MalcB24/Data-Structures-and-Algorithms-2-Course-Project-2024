@@ -1,6 +1,5 @@
 import statistics
 
-
 class Node:
     def __init__(self, data, color="red"):
         self.data = data
@@ -162,6 +161,10 @@ class RedBlackTree:
 
     def get_tree_height(self):
         return self.compute_height(self.root)
+
+    def reset_stats(self):
+        self.steps = []
+        self.rotations = []
 
     def printStatistics(self):
         print("Red Black Tree")

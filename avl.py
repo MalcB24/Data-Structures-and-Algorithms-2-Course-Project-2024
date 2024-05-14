@@ -103,6 +103,9 @@ class AVLTree:
         # Recursively count the leaves in both the left and right subtree
         return self.count_leaves(node.left) + self.count_leaves(node.right)
 
+    def reset_stats(self):
+        self.steps = []
+        self.rotations = []
 
     def printStatistics(self):
         print("AVL Tree")

@@ -55,7 +55,11 @@ class SkipList:
             self.steps.append(step_count)  # Record steps for this insertion
             self.promotions.append(promotions_this_time)  # Record promotions for this insertion
 
-    def print_statistics(self):
+    def reset_stats(self):
+        self.steps = []
+        self.promotions = []
+
+    def printStatistics(self):
         print("Skip List Statistics")
         print("Steps to Insertion Point:")
         print("Minimum: ", min(self.steps))
